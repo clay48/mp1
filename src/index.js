@@ -1,12 +1,12 @@
 /*
- * This is the main entry point for Webpack, the compiler & dependency loader.
- * All files that are necessary for your web page and need to be 'watched' for changes should be included here!
+ * Main entry for Webpack.
+ * Watch + bundle HTML, SCSS, and JS.
  */
 
-// HTML Files
+// HTML
 import './index.html';
 
-// Stylesheets
+// Styles
 import './css/main.scss';
 
 // Scripts

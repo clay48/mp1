@@ -1,13 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illini Nap Pods</title>
+  <!-- FontAwesome for icon fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <nav id="navbar" class="navbar">
+    <div class="brand"><a href="#about">Illini Nap Pods</a></div>
+    <ul class="nav-menu">
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="about" class="section hero-section">
+    <div class="container">
+      <h1>Welcome to Illini Nap Pods</h1>
+      <p>Recharge between classes with private, comfortable nap pod spaces.</p>
+    </div>
+  </header>
+
+  <section id="features" class="section features-section">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="features-content">
+        <div class="features-text">
+          <h3>Why Choose Our Nap Pods?</h3>
+          <ul>
+            <li><i class="fas fa-bed"></i> Comfortable reclining seats</li>
+            <li><i class="fas fa-volume-mute"></i> Noise-cancelling environment</li>
+            <li><i class="fas fa-bolt"></i> Personal charging outlets</li>
+            <li><i class="fas fa-thermometer-half"></i> Climate-controlled interior</li>
+          </ul>
+        </div>
+        <div class="features-video">
+          <video src="assets/demo.mp4" controls width="100%"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section pricing-section">
+    <div class="container">
+      <h2>Pricing</h2>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3>Basic Nap</h3>
+          <p>$10 for 30 minutes</p>
+        </div>
+        <div class="pricing-card">
+          <h3>Power Nap</h3>
+          <p>$15 for 1 hour</p>
+        </div>
+        <div class="pricing-card">
+          <h3>Unlimited</h3>
+          <p>$100 per month</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="slide">
+            <img src="assets/pod1.jpg" alt="Nap Pod 1" />
+            <h3>Nap Pod 1 - The Cozy Corner</h3>
+            <button class="modal-btn" data-modal="modal1">Learn More</button>
+          </div>
+          <div class="slide">
+            <img src="assets/pod2.jpg" alt="Nap Pod 2" />
+            <h3>Nap Pod 2 - The Silent Study</h3>
+            <button class="modal-btn" data-modal="modal2">Learn More</button>
+          </div>
+          <div class="slide">
+            <img src="assets/pod3.jpg" alt="Nap Pod 3" />
+            <h3>Nap Pod 3 - The Energizer</h3>
+            <button class="modal-btn" data-modal="modal3">Learn More</button>
+          </div>
+        </div>
+        <a class="carousel-prev"><i class="fas fa-chevron-left"></i></a>
+        <a class="carousel-next"><i class="fas fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="section contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: contact@nappods.com</p>
+      <p>Phone: (217) 555-0123</p>
+      <p>Follow us on social media:</p>
+      <p>
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modals for more info about each pod -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Nap Pod 1 - The Cozy Corner</h3>
+      <img src="assets/pod1.jpg" alt="Nap Pod 1" />
+      <p>Nap Pod 1 "The Cozy Corner" is located in the Grainger Engineering Library. It features plush seating, gentle lighting, and a soothing ambiance to help you relax.</p>
+    </div>
+  </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Nap Pod 2 - The Silent Study</h3>
+      <img src="assets/pod2.jpg" alt="Nap Pod 2" />
+      <p>Nap Pod 2 "The Silent Study" provides a quiet, private space in the Illini Union for maximum concentration and rest, equipped with noise-cancellation technology.</p>
+    </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Nap Pod 3 - The Energizer</h3>
+      <img src="assets/pod3.jpg" alt="Nap Pod 3" />
+      <p>Nap Pod 3 "The Energizer" at the Siebel Center includes an invigorating environment with built-in speakers for soft music and adjustable lighting to recharge your energy.</p>
+    </div>
+  </div>
+</body>
 </html>

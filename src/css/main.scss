@@ -1,1 +1,327 @@
-/* Your SCSS here. */
+// Variables and mixin for reuse
+$primary-color: #E84A27;
+$secondary-color: #2C3E50;
+$nav-height-large: 80px;
+$nav-height-small: 50px;
+$nav-link-large: 1.1em;
+$nav-link-small: 0.9em;
+$brand-font-large: 1.5em;
+$brand-font-small: 1.2em;
+
+@mixin flexCenter($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global styles
+.section {
+  scroll-margin-top: $nav-height-small;
+}
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  color: #333;
+}
+h1, h2, h3, p {
+  margin-top: 0;
+}
+.section h2 {
+  margin-bottom: 20px;
+}
+
+// Navbar styles (sticky & resizing)
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $secondary-color;
+  color: #fff;
+  padding: 0 20px;
+  height: $nav-height-large;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  z-index: 100;
+  .brand a {
+    color: $primary-color;
+    font-size: $brand-font-large;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    li {
+      margin: 0 15px;
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-size: $nav-link-large;
+      transition: color 0.3s;
+      &.active {
+        color: $primary-color;
+      }
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  &.scrolled {
+    height: $nav-height-small;
+    .brand a {
+      font-size: $brand-font-small;
+    }
+    .nav-menu a {
+      font-size: $nav-link-small;
+    }
+  }
+}
+
+// Hero Section (About) with fixed background and centered content
+.hero-section {
+  background: url('../assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+  @include flexCenter(column);
+  text-align: center;
+  padding: 60px 20px;
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+
+    // Highlight background
+    background: rgba(0, 0, 0, 0.6); // semi-transparent dark overlay
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
+// Features Section (multi-column with video)
+.features-section {
+  padding: 60px 20px;
+  .features-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .features-text {
+    width: 50%;
+    padding: 0 20px;
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 10px 0;
+      i {
+        color: $primary-color;
+        margin-right: 8px;
+      }
+    }
+  }
+  .features-video {
+    width: 50%;
+    padding: 0 20px;
+    video {
+      width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+  }
+}
+
+// Pricing Section (three-column pricing cards)
+.pricing-section {
+  padding: 60px 20px;
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pricing-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 1 0 200px;
+    max-width: 300px;
+    h3 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
+}
+
+// Gallery Section (carousel and modals)
+.gallery-section {
+  padding: 60px 20px;
+  .carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .slide {
+      flex: 0 0 100%;
+      text-align: center;
+      padding: 20px;
+      img {
+        width: 100%;
+        display: block;
+        border-radius: 5px;
+      }
+      h3 {
+        margin: 10px 0;
+      }
+    }
+    .modal-btn {
+      background: $primary-color;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+    }
+    .carousel-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 20px;
+      cursor: pointer;
+      user-select: none;
+      left: 10px;
+      i {
+        pointer-events: none;
+      }
+    }
+    .carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 20px;
+      cursor: pointer;
+      user-select: none;
+      right: 10px;
+      i {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// Contact Section (footer with social icons)
+.contact-section {
+  background: #f4f4f4;
+  padding: 60px 20px;
+  p {
+    margin: 5px 0;
+  }
+  .social-icon {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #333;
+    i {
+      font-size: 1.5em;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Modal overlay and content
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    overflow-y: auto;
+    text-align: left;
+    img {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
