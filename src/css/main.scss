@@ -34,8 +34,11 @@ body {
 h1, h2, h3, p {
   margin-top: 0;
 }
+
+// ✅ Center all section titles
 .section h2 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 // Navbar styles (sticky & resizing)
@@ -258,6 +261,7 @@ h1, h2, h3, p {
 .contact-section {
   background: #f4f4f4;
   padding: 60px 20px;
+  text-align: center;   // ✅ center heading + text + icons
   p {
     margin: 5px 0;
   }
