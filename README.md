@@ -1,3 +1,39 @@
+# EarForge — CS 409 MP1 Submission
+
+A single-page landing site for **EarForge**, a concept ear-training product for music producers.
+
+## Where each requirement lives
+
+| # | Requirement | Where |
+|---|---|---|
+| 1 | Full-width stripes, header + footer | `header.hero`, five `section`s, `footer#contact` |
+| 2 | Sticky navbar | `.nav` (`position: fixed`) |
+| 3 | Position indicator | `updateActiveLink()` in `js/main.js`; last item forced at page bottom |
+| 4 | Navbar resizing (height + font size) | `.nav.is-compact` toggled after 40px of scroll |
+| 5 | Smooth scrolling | `smoothScrollTo()`: requestAnimationFrame + ease-in-out, offset for the navbar |
+| 6 | Carousel (4 slides, side arrows) | `#tour`: arrows, dots, keyboard arrows, swipe |
+| 7 | Multi-column (4 columns) | `#skills .cards` (4 → 2 → 1 columns) and `#plans` (3 columns) |
+| 8 | Centering | All sections are horizontally centered; hero content is vertically centered with flexbox |
+| 9 | Responsive | Checked at 1920x1080, 1366x768, 1280x720, 1024x768 and 768x1024 |
+| 10 | Fixed background image | `#why` (`background-attachment: fixed`) |
+| 11 | Modals | `#plans` "See details" buttons open native `<dialog>` modals (Esc, backdrop click or X closes them) |
+| 12 | HTML5 video | `#demo` `<video>` with WebM + MP4 sources |
+| 13 | SCSS features | variables, maps, mixins, `@each`/`@for` loops, nesting, `sass:color`, CSS custom properties |
+| 14 | CSS3 animations | hero fade-up, equalizer-bar keyframes, scroll reveals, modal in/out, carousel slide transitions |
+| 15/16 | Vector icons + social icons | Font Awesome (solid + brands) in the navbar, cards and footer |
+
+## Sources
+
+- **Font Awesome Free** (`@fortawesome/fontawesome-free`, icons under CC BY 4.0, fonts under SIL OFL 1.1), loaded through npm for the vector and social icons (requirement 15 names FontAwesome explicitly)
+- **Google Fonts**: Inter and Space Grotesk (SIL OFL)
+- MDN Web Docs reference pages: `<dialog>`, `IntersectionObserver`, `Element.getBoundingClientRect()`, `background-attachment`, CSS Grid
+- Sass documentation: `sass:map`, `sass:color`, mixins and control flow
+- WAI-ARIA Authoring Practices: Carousel pattern (for the ARIA roles on slides)
+- **Media**: every image and the demo video were generated for this project (Python/matplotlib plots and an ffmpeg-rendered pink-noise EQ demo). No third-party media is used.
+- **LLM use**: code was written with Claude (Anthropic). The chat log link is in `llm_logs.csv`, as the course policy requires.
+
+---
+
 # MP #1: One Web Page To Rule Them All
 ### Due: Tuesday, Sep 22, 2026, 11:59PM CT
 
